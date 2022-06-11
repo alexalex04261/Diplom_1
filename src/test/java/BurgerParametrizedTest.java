@@ -24,11 +24,11 @@ public class BurgerParametrizedTest {
   public static Object[][] getBurgerPrice() {
     return new Object[][] {
             {
-                    new Database().availableBuns().get(0),
+                    new Bun("black bun", 100),
                     List.of(
-                            new Database().availableIngredients().get(0),
-                            new Database().availableIngredients().get(3),
-                            new Database().availableIngredients().get(5)
+                            new Ingredient(IngredientType.SAUCE, "hot sauce", 100),
+                            new Ingredient(IngredientType.FILLING, "cutlet", 100),
+                            new Ingredient(IngredientType.FILLING, "sausage", 300)
                     ),
                     700,
                     "(==== black bun ====)\r\n" +
@@ -40,10 +40,10 @@ public class BurgerParametrizedTest {
                     "Price: 700,000000\r\n"
             },
             {
-                    new Database().availableBuns().get(2),
+                    new Bun("red bun", 300),
                     List.of(
-                            new Database().availableIngredients().get(1),
-                            new Database().availableIngredients().get(4)
+                            new Ingredient(IngredientType.SAUCE, "sour cream", 200),
+                            new Ingredient(IngredientType.FILLING, "dinosaur", 200)
                     ),
                     1000,
                     "(==== red bun ====)\r\n" +
@@ -54,7 +54,7 @@ public class BurgerParametrizedTest {
                     "Price: 1000,000000\r\n"
             },
             {
-                    new Database().availableBuns().get(1),
+                    new Bun("white bun", 200),
                     List.of(),
                     400,
                     "(==== white bun ====)\r\n" +

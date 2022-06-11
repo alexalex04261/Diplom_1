@@ -35,7 +35,7 @@ public class BurgerTest {
   @Test
   public void moveIngredientTest() {
     Burger burger = new Burger();
-    Ingredient ingredient1 = new Database().availableIngredients().get(0);
+    Ingredient ingredient1 = new Ingredient(IngredientType.SAUCE, "hot sauce", 100);
     burger.addIngredient(ingredient1);
     burger.addIngredient(ingredient);
     burger.moveIngredient(0, 1);

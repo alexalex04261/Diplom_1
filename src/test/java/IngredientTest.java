@@ -1,13 +1,12 @@
 import org.junit.Assert;
 import org.junit.Test;
-import praktikum.Database;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
 public class IngredientTest {
   @Test
   public void getPriceTest() {
-    Ingredient ingredient = new Database().availableIngredients().get(0);
+    Ingredient ingredient = new Ingredient(IngredientType.SAUCE, "hot sauce", 100);
     float expected = 100;
     float actual = ingredient.getPrice();
     Assert.assertEquals(expected, actual, 0.001);
@@ -15,7 +14,7 @@ public class IngredientTest {
 
   @Test
   public void getNameTest() {
-    Ingredient ingredient = new Database().availableIngredients().get(1);
+    Ingredient ingredient = new Ingredient(IngredientType.SAUCE, "sour cream", 200);
     String expected = "sour cream";
     String actual = ingredient.getName();
     Assert.assertEquals(expected, actual);
@@ -23,7 +22,7 @@ public class IngredientTest {
 
   @Test
   public void getTypeTest() {
-    Ingredient ingredient = new Database().availableIngredients().get(3);
+    Ingredient ingredient = new Ingredient(IngredientType.FILLING, "cutlet", 100);
     var expected = "FILLING";
     String actual = String.valueOf(ingredient.getType());
     Assert.assertEquals(expected, actual);
